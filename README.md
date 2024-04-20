@@ -27,6 +27,14 @@ Transparency is at the core of DeleGate. All transactions and access permissions
 
 ## References
 
+### Attestation
+
+https://testnet-scan.sign.global/schema/onchain_evm_421614_0x24
+
+### Docs
+
+https://docs.sign.global/developer-apis/index-2/address-book
+
 ### Figma
 
 I utilized this figma template for frontend design.

@@ -10,4 +10,8 @@ contract Sample {
     function execute() public {
         emit Executed();
     }
+
+    function getFunctionSig() public pure returns (bytes4) {
+        return this.execute.selector;
+    }
 }
