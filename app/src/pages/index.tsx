@@ -4,7 +4,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={`box-border flex relative flex-col shrink-0 bg-gradient-to-br from-gray-800 to-black ${inter.className}`}>
+    <main
+      className={`box-border flex relative flex-col shrink-0 bg-gradient-to-br from-gray-800 to-black ${inter.className}`}
+    >
       <header className="flex justify-between items-center p-4 text-white">
         <h1 className="text-lg font-bold text-purple-600">DeleGate</h1>
         <button className="px-4 py-2 bg-purple-600 rounded-lg font-medium">Connect Wallet</button>
@@ -70,25 +72,15 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col p-20 w-full text-white leading-[110%] max-md:px-5 max-md:max-w-full">
-          <div className="text-6xl font-extrabold text-center max-md:max-w-full max-md:text-4xl">
-            Powered By
-          </div>
+          <div className="text-6xl font-extrabold text-center max-md:max-w-full max-md:text-4xl">Powered By</div>
           <div className="flex justify-center items-center px-16 mt-20 text-2xl font-bold max-md:px-5 max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 justify-between w-full max-w-xl max-md:flex-wrap max-md:max-w-full">
               <div className="flex gap-4 justify-center whitespace-nowrap">
-                <img
-                  loading="lazy"
-                  src="/arbitrum.png"
-                  className="shrink-0 aspect-[1.03] w-[33px]"
-                />
+                <img loading="lazy" src="/arbitrum.png" className="shrink-0 aspect-[1.03] w-[33px]" />
                 <div className="my-auto">Arbitrum</div>
               </div>
               <div className="flex gap-4 justify-center whitespace-nowrap">
-                <img
-                  loading="lazy"
-                  src="/sign-protocol.svg"
-                  className="shrink-0 w-8 aspect-square fill-white"
-                />
+                <img loading="lazy" src="/sign-protocol.svg" className="shrink-0 w-8 aspect-square fill-white" />
                 <div className="my-auto">Sign Protocol</div>
               </div>
             </div>
@@ -106,7 +98,8 @@ export default function Home() {
                 Attestations
               </div>
               <div className="mt-8 text-lg leading-7 max-md:max-w-full">
-                DeleGate utilizes the Sign Protocol&apos;s attestation to manage the roles of smart contract wallets. Only accounts with attestation can execute certain functions.
+                DeleGate utilizes the Sign Protocol&apos;s attestation to manage the roles of smart contract wallets.
+                Only accounts with attestation can execute certain functions.
               </div>
             </div>
           </div>
@@ -123,14 +116,15 @@ export default function Home() {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[68%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow justify-center mt-1 text-xl text-white max-md:mt-10 max-md:max-w-full">
-              <div className="font-bold uppercase leading-[100%] tracking-[3px] max-md:max-w-full">
-                Benefit
-              </div>
+              <div className="font-bold uppercase leading-[100%] tracking-[3px] max-md:max-w-full">Benefit</div>
               <div className="mt-4 text-7xl font-extrabold leading-[79px] max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
                 <span className="text-purple-400">Transparent</span> role management
               </div>
               <div className="mt-8 text-lg leading-7 max-md:max-w-full">
-                DeleGate enhances decentralized team management and operations with secure, role-based access and full transparency. It automates critical wallet operations, streamlining processes and ensuring all actions are traceable and verifiable.              </div>
+                DeleGate enhances decentralized team management and operations with secure, role-based access and full
+                transparency. It automates critical wallet operations, streamlining processes and ensuring all actions
+                are traceable and verifiable.{" "}
+              </div>
               <div className="flex gap-4 justify-center self-start py-4 mt-8 font-medium tracking-wide rounded-lg leading-[120%]">
                 <div className="justify-center p-4 bg-purple-600 rounded-lg border-2 border-purple-600 border-solid max-md:px-5">
                   Demo
