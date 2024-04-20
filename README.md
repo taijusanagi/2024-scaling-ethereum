@@ -2,9 +2,27 @@
 
 DeleGate is a smart contract wallet with attestation-based role management.
 
+![banner](./docs/banner.png)
+
+## Live Demo
+
+https://delegate-wallet-nine.vercel.app/
+
+## Video
+
+https://youtu.be/WZqBXYWT4e0
+
 ## Description
 
 DeleGate utilizes the Sign Protocol's attestation to manage the roles of smart contract wallets. Only accounts with attestation can execute certain functions.
+
+## How it works
+
+![how-it-works](./app/public/how-it-work.png)
+
+- Smart contract Wallet Factory puts Sign Protocol's address, schema ID into smart contract wallet
+- Smart contract wallet refers Sign Protocol's attestations to get what type of account has what level of access to which type of contract.
+- If the all conditions match, the smart contract wallet execute target contract function
 
 ## Key Benefits
 
@@ -27,20 +45,18 @@ Transparency is at the core of DeleGate. All transactions and access permissions
 
 ## References
 
-### Deployed Contract
+### DeleGateWallet
 
-```
-deleGateWalletImplementation 0xace60f81c4a302a9a80f4ffed7356b3acd781aee
-deleGateWalletFactory 0x8866b847258a994ce45cdf7dedcfb9b0692cc157
-sample 0xb0dad68179d4a4714c28f3adf1a6dd7be1c8b330
-```
+https://sepolia.arbiscan.io/address/0xace60f81c4a302a9a80f4ffed7356b3acd781aee#code
+
+### DeleGateWalletFactory
+
+https://sepolia.arbiscan.io/address/0x8866b847258a994ce45cdf7dedcfb9b0692cc157#code
+
+### SampleTargetContract
+
+https://sepolia.arbiscan.io/address/0xb0dad68179d4a4714c28f3adf1a6dd7be1c8b330#code
 
 ### Created Attestation
 
-https://testnet-scan.sign.global/schema/onchain_evm_421614_0x24
-
-### Figma
-
-I utilized this figma template for frontend design.
-
-https://www.figma.com/community/file/1222100666260862670/landing-page-kit-free-13-landing-pages-collection-for-ui-ux-design?searchSessionId=lv7rtz0z-gf3i85lqhic
+https://testnet-scan.sign.global/attestation/onchain_evm_421614_0x49
