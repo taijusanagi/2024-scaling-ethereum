@@ -42,7 +42,7 @@ contract DeleGateWallet {
         schemaId = _schemaId;
     }
 
-    function execute(address to, uint256 value, bytes calldata data, uint64 attestationId) public {
+    function execute(address to, bytes calldata data, uint64 attestationId) public payable {
         Attestation memory attestation = ISP(signProtocolAddress).getAttestation(attestationId);
         require(attestation.attester == owner, "Attestation not from owner");
         require(attestation.schemaId == schemaId, "Schema ID mismatch");
@@ -50,6 +50,8 @@ contract DeleGateWallet {
         require(!attestation.revoked, "Attestation revoked");
         bool isRecipient = false;
         for (uint i = 0; i < attestation.recipients.length; i++) {
+            console.log(i);
+            console.log(convertReceipentToAddress(attestation.recipients[i]));
             if (convertReceipentToAddress(attestation.recipients[i]) == msg.sender) {
                 isRecipient = true;
                 break;
@@ -57,10 +59,10 @@ contract DeleGateWallet {
         }
         require(isRecipient, "Not a recipient of attestation");
         (address wallet, bytes4 registeredFunctionSig) = convertDataToWalletAndFunction(attestation.data);
-        // require(wallet == address(this), "Wallet address mismatch");
+        require(wallet == address(this), "Wallet address mismatch");
         bytes4 actualFunctionSig = getFunctionSigFromData(data);
         require(registeredFunctionSig == actualFunctionSig, "Function signature mismatch");
-        (bool success, ) = to.call{value: value}(data);
+        (bool success, ) = to.call{value: msg.value}(data);
         require(success, "Transaction failed");
     }
     
