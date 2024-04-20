@@ -24,3 +24,11 @@ Transparency is at the core of DeleGate. All transactions and access permissions
 
 - Integrate ERC4331 Account Abstraction
 - Integrate EIP3074 AUTH and AUTHCALL opcodes after Pectra update
+
+## References
+
+### Figma
+
+I utilized this figma template for frontend design.
+
+https://www.figma.com/community/file/1222100666260862670/landing-page-kit-free-13-landing-pages-collection-for-ui-ux-design?searchSessionId=lv7rtz0z-gf3i85lqhic

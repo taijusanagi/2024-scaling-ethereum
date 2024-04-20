@@ -91,9 +91,7 @@ export default function Home() {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col self-stretch my-auto text-white max-md:mt-10 max-md:max-w-full">
-              <div className="text-xl font-bold leading-5 uppercase tracking-[3px] max-md:max-w-full">
-                ROLE MANAGEMENT WITH
-              </div>
+              <div className="text-xl font-bold leading-5 uppercase tracking-[3px] max-md:max-w-full">ROLE WITH</div>
               <div className="mt-4 text-6xl font-extrabold leading-[62px] max-md:max-w-full max-md:text-4xl max-md:leading-[50px]">
                 Attestations
               </div>
