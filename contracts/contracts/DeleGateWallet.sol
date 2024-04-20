@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
 
-import "hardhat/console.sol";
+// Uncomment this line to use console.log
+// import "hardhat/console.sol";
 
 enum DataLocation {
     ONCHAIN,
@@ -50,8 +51,8 @@ contract DeleGateWallet {
         require(!attestation.revoked, "Attestation revoked");
         bool isRecipient = false;
         for (uint i = 0; i < attestation.recipients.length; i++) {
-            console.log(i);
-            console.log(convertReceipentToAddress(attestation.recipients[i]));
+            // console.log(i);
+            // console.log(convertReceipentToAddress(attestation.recipients[i]));
             if (convertReceipentToAddress(attestation.recipients[i]) == msg.sender) {
                 isRecipient = true;
                 break;
@@ -74,10 +75,10 @@ contract DeleGateWallet {
         Attestation memory attestation = ISP(signProtocolAddress).getAttestation(attestationId);
         address receipent = convertReceipentToAddress(attestation.recipients[0]);
         (address wallet, bytes4 functionSig) = convertDataToWalletAndFunction(attestation.data);
-        console.log("debug in contract");
-        console.log(receipent);
-        console.log(wallet);
-        console.logBytes4(functionSig);
+        // console.log("debug in contract");
+        // console.log(receipent);
+        // console.log(wallet);
+        // console.logBytes4(functionSig);
         return attestation;
     }
 
