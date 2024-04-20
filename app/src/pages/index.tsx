@@ -1,3 +1,4 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ export default function Home() {
     >
       <header className="flex justify-between items-center p-4 text-white">
         <h1 className="text-lg font-bold text-purple-600">DeleGate</h1>
-        <button className="px-4 py-2 bg-purple-600 rounded-lg font-medium">Connect Wallet</button>
+        <ConnectButton />
       </header>
 
       <div className="box-border flex relative flex-col shrink-0">
