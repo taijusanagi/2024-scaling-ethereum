@@ -1,17 +1,21 @@
 # DeleGate
 
-DeleGate is wallet with role management with attestation.
+DeleGate is a smart contract wallet with attestation-based role management.
 
 ## Description
 
-DeleGate allows designated accounts to manage access to a wallet with complete transparency. This infrastructure supports the automation of processes and is particularly useful for team management in decentralized environments. The system ensures that only authorized individuals can access wallet functionalities based on roles defined via smart contracts.
+DeleGate utilizes the Sign Protocol's attestation to manage the roles of smart contract wallets. Only accounts with attestation can execute certain functions.
 
-## How It Works
+## Key Benefits
 
-DeleGate operates on the Arbitrum Sepolia network and utilizes the following technologies:
+### Automation
+DeleGate automates crucial wallet operations, enabling seamless transaction flows and interactions without manual oversight. This automation reduces human error and increases the efficiency of decentralized operations.
 
-- **Smart Contract Wallet**: Deployed on Arbitrum Sepolia to leverage its lower gas costs and faster transaction times.
-- **Sign Protocol**: Utilized to manage attestation effectively, ensuring that all actions are verified and authenticated securely.
+### Team Management
+With role-based access control, DeleGate facilitates comprehensive team management. It allows organizations to define and enforce precise access controls and roles, making it ideal for managing large teams and multi-tiered permissions structures in decentralized projects.
+
+### Transparency
+Transparency is at the core of DeleGate. All transactions and access permissions are recorded on the blockchain, providing a clear and immutable audit trail. This transparency ensures that all actions are traceable and verifiable, enhancing trust and security for all users.
 
 ## Future Roadmap
 
