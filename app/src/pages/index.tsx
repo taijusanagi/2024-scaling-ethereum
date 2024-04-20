@@ -1,5 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +24,11 @@ export default function Home() {
               DeleGate is a smart contract wallet with attestation-based role management.
             </div>
             <div className="flex gap-4 justify-center self-center mt-8 text-xl font-medium tracking-wide leading-6 text-white">
-              <div className="justify-center p-4 bg-purple-600 rounded-lg border-2 border-purple-600 border-solid max-md:px-5">
-                Demo
-              </div>
+              <Link href="/demo">
+                <div className="justify-center p-4 bg-purple-600 rounded-lg border-2 border-purple-600 border-solid max-md:px-5">
+                  Demo
+                </div>
+              </Link>
             </div>
             <div className="flex flex-col self-center mt-20 w-full bg-white rounded-3xl shadow-2xl max-w-[1100px] max-md:mt-10 max-md:max-w-full">
               <div className="flex gap-5 justify-between px-4 py-2 w-full max-md:flex-wrap max-md:max-w-full">
@@ -125,9 +128,11 @@ export default function Home() {
                 are traceable and verifiable.{" "}
               </div>
               <div className="flex gap-4 justify-center self-start py-4 mt-8 font-medium tracking-wide rounded-lg leading-[120%]">
-                <div className="justify-center p-4 bg-purple-600 rounded-lg border-2 border-purple-600 border-solid max-md:px-5">
-                  Demo
-                </div>
+                <Link href="/demo">
+                  <div className="justify-center p-4 bg-purple-600 rounded-lg border-2 border-purple-600 border-solid max-md:px-5">
+                    Demo
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
