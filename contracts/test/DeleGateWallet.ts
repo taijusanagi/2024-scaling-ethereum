@@ -20,6 +20,7 @@ describe("DeleGateWallet", function () {
     const deleGateWalletFactory = await hre.viem.deployContract("DeleGateWalletFactory", [
       deleGateWalletImplementation.address,
     ]);
+    const sample = await hre.viem.deployContract("Sample");
 
     const deployedDeleGateWalletAddress = await deleGateWalletFactory.read.predictDeterministicAddress([
       ethers.constants.HashZero,
@@ -33,7 +34,6 @@ describe("DeleGateWallet", function () {
     ]);
 
     const deleGateWallet = await hre.viem.getContractAt("DeleGateWallet", deployedDeleGateWalletAddress);
-    const sample = await hre.viem.deployContract("Sample");
 
     // must set this address as wallet in attestation
     console.log("deleGateWallet", deleGateWallet.address);

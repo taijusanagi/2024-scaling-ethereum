@@ -12,7 +12,7 @@ const config: HardhatUserConfig = {
       },
     },
     arbitrum: {
-      url: "https://endpoints.omniatech.io/v1/arbitrum/sepolia/public",
+      url: "https://public.stackup.sh/api/v1/node/arbitrum-sepolia",
       accounts,
     },
   },

@@ -27,13 +27,17 @@ Transparency is at the core of DeleGate. All transactions and access permissions
 
 ## References
 
-### Attestation
+### Deployed Contract
+
+```
+deleGateWalletImplementation 0x64be4a6b41a5910b56e26c587454cdc023614e92
+deleGateWalletFactory 0x7c054c1081f747cbc39aa4899a53378ea66b3dea
+sample 0xf920618c3cf765ce5570a15665c50b3e3f287352
+```
+
+### Created Attestation
 
 https://testnet-scan.sign.global/schema/onchain_evm_421614_0x24
-
-### Docs
-
-https://docs.sign.global/developer-apis/index-2/address-book
 
 ### Figma
 
