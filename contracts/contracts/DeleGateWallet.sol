@@ -59,7 +59,7 @@ contract DeleGateWallet {
             }
         }
         require(isRecipient, "Not a recipient of attestation");
-        (address wallet, bytes4 registeredFunctionSig) = convertDataToWalletAndFunction(attestation.data);
+        (address wallet, address target, bytes4 registeredFunctionSig) = convertData(attestation.data);
         require(wallet == address(this), "Wallet address mismatch");
         bytes4 actualFunctionSig = getFunctionSigFromData(data);
         require(registeredFunctionSig == actualFunctionSig, "Function signature mismatch");
@@ -74,18 +74,19 @@ contract DeleGateWallet {
     function getAttestation(uint64 attestationId) public view returns (Attestation memory) {
         Attestation memory attestation = ISP(signProtocolAddress).getAttestation(attestationId);
         address receipent = convertReceipentToAddress(attestation.recipients[0]);
-        (address wallet, bytes4 functionSig) = convertDataToWalletAndFunction(attestation.data);
+        (address wallet, address target, bytes4 functionSig) = convertData(attestation.data);
         // console.log("debug in contract");
         // console.log(receipent);
         // console.log(wallet);
+        // console.log(target);
         // console.logBytes4(functionSig);
         return attestation;
     }
 
-    function convertDataToWalletAndFunction(bytes memory data) public pure returns (address, bytes4) {
-        (address wallet, bytes memory functionSigBytes) = abi.decode(data, (address, bytes));
+    function convertData(bytes memory data) public pure returns (address, address, bytes4) {
+        (address wallet, address target, bytes memory functionSigBytes) = abi.decode(data, (address, address, bytes));
         bytes4 functionSig =  bytes4(functionSigBytes);
-        return (wallet, functionSig);
+        return (wallet, target, functionSig);
     }
 
     function convertReceipentToAddress(bytes memory receipent) public pure returns (address) {

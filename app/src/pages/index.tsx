@@ -10,7 +10,9 @@ export default function Home() {
       className={`box-border flex relative flex-col shrink-0 bg-gradient-to-br from-gray-800 to-black ${inter.className}`}
     >
       <header className="flex justify-between items-center p-4 text-white">
-        <h1 className="text-lg font-bold text-purple-600">DeleGate</h1>
+        <Link href="/">
+          <h1 className="text-lg font-bold text-purple-600">DeleGate</h1>
+        </Link>
         <ConnectButton />
       </header>
 
