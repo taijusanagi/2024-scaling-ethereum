@@ -9,7 +9,7 @@ describe("DeleGateWallet", function () {
   it("Integration", async function () {
     // must change to attester address
     const attestationOwner = "0xab95e42096Ef6C18eD278f4FcA25754c96E60aae";
-    const attestationId = 57;
+    const attestationId = 0x3d;
 
     console.log("attestationOwner", attestationOwner);
     const [signer] = await hre.viem.getWalletClients();
@@ -21,8 +21,10 @@ describe("DeleGateWallet", function () {
       deleGateWalletImplementation.address,
     ]);
     const sample = await hre.viem.deployContract("Sample");
+    console.log("sample", sample.address);
 
     const deployedDeleGateWalletAddress = await deleGateWalletFactory.read.predictDeterministicAddress([
+      attestationOwner,
       ethers.constants.HashZero,
     ]);
 
@@ -37,6 +39,8 @@ describe("DeleGateWallet", function () {
 
     // must set this address as wallet in attestation
     console.log("deleGateWallet", deleGateWallet.address);
+    // return; // to get the address of the wallet
+
     const attestation = await deleGateWallet.read.getAttestation([BigInt(attestationId)]);
     console.log("attestation", attestation);
 
@@ -45,6 +49,8 @@ describe("DeleGateWallet", function () {
       functionName: "execute",
       args: [],
     });
+
+    console.log("data", data);
 
     const expectedFunctionSig = await sample.read.getFunctionSig();
     console.log("expectedFunctionSig", expectedFunctionSig);

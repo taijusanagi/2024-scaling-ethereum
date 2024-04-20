@@ -17,13 +17,15 @@ contract DeleGateWalletFactory {
     }
 
     function createDelegateWallet(address _owner, address _signProtocolAddress, uint64 _schemaId, bytes32 salt) public returns (address) {
-        address clone = Clones.cloneDeterministic(implementation, salt);
+        bytes32 _salt = keccak256(abi.encodePacked(_owner, salt));
+        address clone = Clones.cloneDeterministic(implementation, _salt);
         DeleGateWallet(clone).initialize(_owner, _signProtocolAddress, _schemaId);
         return clone;
     }
 
-    function predictDeterministicAddress(bytes32 salt) public view returns (address) {
-        return Clones.predictDeterministicAddress(implementation, salt);
+    function predictDeterministicAddress(address _owner, bytes32 salt) public view returns (address) {
+        bytes32 _salt = keccak256(abi.encodePacked(_owner, salt));
+        return Clones.predictDeterministicAddress(implementation, _salt);
     }
 
 }

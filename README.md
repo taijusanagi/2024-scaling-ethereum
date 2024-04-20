@@ -30,9 +30,9 @@ Transparency is at the core of DeleGate. All transactions and access permissions
 ### Deployed Contract
 
 ```
-deleGateWalletImplementation 0x64be4a6b41a5910b56e26c587454cdc023614e92
-deleGateWalletFactory 0x7c054c1081f747cbc39aa4899a53378ea66b3dea
-sample 0xf920618c3cf765ce5570a15665c50b3e3f287352
+deleGateWalletImplementation 0xace60f81c4a302a9a80f4ffed7356b3acd781aee
+deleGateWalletFactory 0x8866b847258a994ce45cdf7dedcfb9b0692cc157
+sample 0xb0dad68179d4a4714c28f3adf1a6dd7be1c8b330
 ```
 
 ### Created Attestation
