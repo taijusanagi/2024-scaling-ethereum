@@ -21,7 +21,9 @@ import { ethers } from "ethers";
 import { useEthersSigner } from "@/hooks/useEthersSigner";
 
 export default function Home() {
-  const [deleGateWalletOwnerAddress, setDeleGateWalletOwnerAddress] = useState("");
+  const [deleGateWalletOwnerAddress, setDeleGateWalletOwnerAddress] = useState(
+    "0xab95e42096Ef6C18eD278f4FcA25754c96E60aae"
+  );
   const [attestationId, setAttestationId] = useState("");
 
   const signer = useEthersSigner();
@@ -146,7 +148,7 @@ export default function Home() {
                 setSteps(result);
                 setIsModalOpen(true);
                 const provider = new ethers.providers.JsonRpcProvider(rpc);
-                const code = await provider.getCode(deleGateWalletOwnerAddress);
+                const code = await provider.getCode(predictDeterministicAddress as string);
                 if (code === "0x") {
                   const factory = new ethers.Contract(
                     deleGateWalletFactoryAddress,
@@ -155,28 +157,29 @@ export default function Home() {
                   );
                   result[0].status = "current";
                   setSteps([...result]);
-                  // const createDelegateWalletTx = await factory.createDelegateWallet(
-                  //   deleGateWalletOwnerAddress,
-                  //   signProtocolAddress,
-                  //   signProtocolSchemaId,
-                  //   ethers.constants.HashZero
-                  // );
-                  // console.log("createDelegateWalletTx.hash", createDelegateWalletTx.hash);
-                  // await createDelegateWalletTx.wait();
-
-                  // sleep 1
-                  await new Promise((resolve) => setTimeout(resolve, 1000));
-                  result[0].status = "complete";
-                  setSteps([...result]);
+                  const createDelegateWalletTx = await factory.createDelegateWallet(
+                    deleGateWalletOwnerAddress,
+                    signProtocolAddress,
+                    signProtocolSchemaId,
+                    ethers.constants.HashZero
+                  );
+                  console.log("createDelegateWalletTx.hash", createDelegateWalletTx.hash);
+                  await createDelegateWalletTx.wait();
                 }
-                const wallet = new ethers.Contract(deleGateWalletOwnerAddress, deleGateWalletArtifact.abi, signer);
+                result[0].status = "complete";
+                setSteps([...result]);
+                const wallet = new ethers.Contract(
+                  predictDeterministicAddress as string,
+                  deleGateWalletArtifact.abi,
+                  signer
+                );
                 result[1].status = "current";
                 setSteps([...result]);
-                // const executeTx = await wallet.execute(sampleAddress, "0x61461954", attestationId);
-                // console.log("executeTx.hash", executeTx.hash);
+                const executeTx = await wallet.execute(sampleAddress, "0x61461954", Number(attestationId));
+                console.log("executeTx.hash", executeTx.hash);
                 result[1].status = "complete";
                 setSteps([...result]);
-                // await executeTx.wait();
+                await executeTx.wait();
               }}
             >
               Test

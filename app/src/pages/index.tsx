@@ -69,11 +69,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/43bb38b94fa2233d06ce46d215bdbc2aebd0a2da8f9b310a1e389d3f2752395e?apiKey=5b267050b6bf44e5a34a2a79f0903d25&"
-                className="w-full aspect-[1.67] max-md:max-w-full"
-              />
+              <img loading="lazy" src="/screen.png" className="w-full max-md:max-w-full" />
             </div>
           </div>
         </div>
@@ -110,8 +106,8 @@ export default function Home() {
           <div className="flex flex-col ml-5 w-[63%] max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d4373f654275dc1104f1591f269e5301f657b16bcdaabead620c428e4d9822ab?apiKey=5b267050b6bf44e5a34a2a79f0903d25&"
-              className="grow w-full shadow-xl aspect-[1.56] max-md:mt-10 max-md:max-w-full"
+              src="/how-it-works.png"
+              className="grow w-full shadow-xl max-md:mt-10 max-md:max-w-full"
             />
           </div>
         </div>
